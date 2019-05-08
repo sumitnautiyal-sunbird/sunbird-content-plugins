@@ -10,5 +10,6 @@ org.ekstep.services.configuration = new(org.ekstep.services.iService.extend({
     getFormConfigurations: function(data, callback) {
         this.postFromService(this.metaURL() + this.configURL('configurationUrl', '/v1/form/read') + data, this.requestHeaders, callback);
     },
+ 
 
 }))

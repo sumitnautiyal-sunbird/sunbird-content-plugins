@@ -18,7 +18,10 @@ angular.module('org.ekstep.metadataform', []).controller('metadataForm', ['$scop
      */
     $scope.categoryList = {}
 
-
+    $scope.data = {
+        model: null
+    }
+    $scope.itemList=[];
     /**
      * 
      */
@@ -119,7 +122,7 @@ angular.module('org.ekstep.metadataform', []).controller('metadataForm', ['$scop
      * @param {Object} object - Field information
      */
     $scope.onConfigChange = function(object) {
-        
+        console.log(object)
         if (object.field) {
             var type = (object.field.inputType == 'select' || object.field.inputType == 'multiselect') ? 'change' : 'click'
             object.field && logTelemetry({ type: type, subtype: object.field.inputType, target: {id: object.field.code, type:"field", ver:"" }}, $scope.manifest);
@@ -315,6 +318,7 @@ angular.module('org.ekstep.metadataform', []).controller('metadataForm', ['$scop
         var form = {};
         form.metaData = getUpdatedMetadata(object.target.contentMeta, $scope.originalContentMeta, $scope.fields);
         form.nodeId = org.ekstep.contenteditor.api.getContext('contentId');
+        console.log(form.metaData);
         if(object.target.contentMeta.ownedBy){
             var ownerShipData = ecEditor.getContext('user');
             form.metaData.ownedBy = object.target.contentMeta.ownedBy;
@@ -507,7 +511,8 @@ angular.module('org.ekstep.metadataform', []).controller('metadataForm', ['$scop
                 }
             });
             $scope.contentMeta = config.model;
-        
+            $scope.prerequisiteoptions = $scope.contentMeta['prerequisite'];
+            console.log($scope.prerequisiteoptions);
             $scope.originalContentMeta = _.clone($scope.contentMeta);
             var layoutConfigurations = $scope.getLayoutConfigurations();
             $scope.fixedLayoutConfigurations = _.uniqBy(layoutConfigurations.fixedLayout, 'code');
@@ -522,7 +527,14 @@ angular.module('org.ekstep.metadataform', []).controller('metadataForm', ['$scop
         var map = { 'defaultTemplate': ["name", "description", "keywords", "appicon"] }
         return map[$scope.tempalteName] || {}
     }
-
+    $scope.changedValue=function(item){
+        console.log(item.name);
+        console.log($scope.itemList)
+        console.log($scope.itemList.indexOf(item.name));
+       if($scope.itemList.indexOf(item.name) == -1) {
+        $scope.itemList.push(item.name);
+       }
+        }
     $scope.isValidInputs = function(object) {
         var scope = object.target;
         var isValid = true;
@@ -568,4 +580,4 @@ angular.module('org.ekstep.metadataform', []).controller('metadataForm', ['$scop
 
 }]);
 
-//# sourceURL=metadataController.js
+//  sourceURL=metadataController.js

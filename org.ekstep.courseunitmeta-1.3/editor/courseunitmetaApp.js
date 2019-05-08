@@ -1,4 +1,5 @@
 angular.module('courseunitmetaApp', []).controller('courseunitmetaController', ['$scope', function($scope) {
+    debugger;
     $scope.mode = ecEditor.getConfig('editorConfig').mode;
     $scope.metadataCloneOb = {};
     $scope.nodeId = $scope.nodeType = '';

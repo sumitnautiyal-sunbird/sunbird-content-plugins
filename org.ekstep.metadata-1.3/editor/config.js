@@ -556,3 +556,114 @@ window.formConfigs = {
     ]
   }
 };
+
+window.courseformConfigurations = {
+  "action": "unitsave",
+  "templateName": "unitMetaTemplate",
+  "fields": [
+    {
+    "code": "name",
+    "dataType": "text",
+    "description": "Title of the content",
+    "editable": true,
+    "inputType": "text",
+    "label": "Title",
+    "name": "Title",
+    "placeholder": "Enter the Title ",
+    "renderingHints": {},
+    "required": true,
+    "visible": true
+  },
+    {
+      "code": "description",
+      "dataType": "text",
+      "description": "Brief description",
+      "editable": true,
+      "inputType": "textarea",
+      "label": "Description",
+      "name": "Description",
+      "placeholder": "Description",
+      "renderingHints": {},
+      "required": true,
+      "visible": true
+    },
+    {
+      "code": "keywords",
+      "dataType": "list",
+      "description": "Keywords for the content",
+      "editable": true,
+      "inputType": "keywordsuggestion",
+      "label": "keywords",
+      "name": "Keywords",
+      "placeholder": "Enter Keywords",
+      "required": true,
+      "visible": true
+    },
+    {
+      "code": "topic",
+      "dataType": "list",
+      "description": "Choose a topic",
+      "editable": true,
+      "inputType": "topicselector",
+      "label": "Topics",
+      "name": "Topics",
+      "placeholder": "Choose Topics",
+      "renderingHints": {},
+      "required": false,
+      "visible": true
+    },
+    {
+      "code": "activitystart",
+      "dataType": "string",
+      "description": "choose in number of days activity will start",
+      "editable": true,
+      "inputType": "number",
+      "label": "Activity Start",
+      "name": "Activity Start",
+      "placeholder": "Enter In Number of days to start",
+      "renderingHints": {},
+      "required": true,
+      "visible": true
+    },
+    {
+      "code": "activityend",
+      "dataType": "string",
+      "description": "choose in number days activity will end",
+      "editable": true,
+      "inputType": "number",
+      "label": "Activity End",
+      "name": "Activity End",
+      "placeholder": "Enter in Number of days activity will End",
+      "renderingHints": {},
+      "required": true,
+      "visible": true
+    },
+    {
+      "code": "prerequisite",
+      "dataType": "string",
+      "description": "Prerequisite of this unit",
+      "editable": true,
+      "inputType": "multiselect",
+      "label": "prerequisite",
+      "name": "Pre-requisite",
+      "placeholder": "Enter Pre-requisite of this unit if there are any",
+      "renderingHints": {},
+      "required": false,
+      "visible": true
+    }
+    // {
+    //   "code": "concepts",
+    //   "dataType": "list",
+    //   "description": "Choose a concept",
+    //   "editable": true,
+    //   "inputType": "conceptselector",
+    //   "label": "Concepts",
+    //   "name": "Concepts",
+    //   "placeholder": "Choose Concepts",
+    //   "renderingHints": {},
+    //   "required": false,
+    //   "visible": true,
+    //   "index": 5
+    // }
+  ]
+};

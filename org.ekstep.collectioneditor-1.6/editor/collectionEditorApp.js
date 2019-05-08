@@ -39,9 +39,11 @@ angular.module('org.ekstep.collectioneditor', ["Scope.safeApply", "ui.sortable"]
     $scope.sortableOptions = {
         stop: function() {
             var collectionData = org.ekstep.collectioneditor._.cloneDeep($scope.contentList);
+            console.log(collectionData);
             var activeNode = org.ekstep.services.collectionService.getActiveNode();
             var treeData = activeNode.getChildren();
             var fancyTreeChild = org.ekstep.collectioneditor._.cloneDeep(collectionData);
+            console.log(this.fancyTreeChild);
             _.forEach(treeData, function(child) {
                 if (child.folder) {
                     fancyTreeChild.push(child)

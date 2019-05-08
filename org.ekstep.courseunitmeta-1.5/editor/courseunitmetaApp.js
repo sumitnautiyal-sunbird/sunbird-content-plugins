@@ -3,6 +3,7 @@ angular.module('courseunitmetaApp', []).controller('courseunitmetaController', [
     $scope.metadataCloneOb = {};
     $scope.nodeId = $scope.nodeType = '';
     const DEFAULT_NODETYPE = 'CourseUnit'
+    console.log(frameworkId);
 
     $scope.updateTitle = function(event, title) {
         $scope.courseunit.name = title;

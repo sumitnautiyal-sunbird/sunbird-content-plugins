@@ -26,11 +26,11 @@
             </div>
         </div>
         <div class="nine wide column editor-body">
-            <div class="breadcrumbTemplate" ng-repeat="page in breadcrumb" data-attr="{{page.objectType[0]}}" ng-include="page.identifier || page.templateURL"></div>
+            <div class="breadcrumbTemplate" ng-repeat="page in breadcrumb" data-attr="{{page.objectType[0]}}" ng-include="page.templateURL"></div>
             <div class="ui grid no-margin" ng-show="!isNewCollection">
                 <div class="padded ui eight" ng-class="(showsuggestedContent && mode === 'Edit') ? 'wide column' : 'twelve wide column'" id="contents-pane">
                     <div class="content-manifest">
-                        <div class="sixteen wide column metacontent-holder metadata-form-container" ng-repeat="page in metaPages" ng-show="getObjectType(page.objectType) === selectedObjectType" data-attr="{{page.objectType[0]}}" ng-include="page.identifier || page.templateURL"></div>
+                        <div class="sixteen wide column metacontent-holder metadata-form-container" ng-repeat="page in metaPages" ng-show="getObjectType(page.objectType) === selectedObjectType" data-attr="{{page.objectType[0]}}" ng-include="page.templateURL"></div>
                     </div>
                     <div class="ui grid padded">
                         <div class="row">
@@ -44,7 +44,7 @@
                                         <div class="dropzone-text">
                                         <!-- Drag and Drop Suggested Content here or <span class="blue-color">View Library</span> -->
                                         <p ng-show="mode.toLowerCase() !== 'edit'">No Contents Available</p>
-                                        <p ng-show="mode.toLowerCase() === 'edit'">Add Resources here <span ng-show="showsuggestedContent">from Suggested Content or </span>by clicking on the 
+                                        <p ng-show="mode.toLowerCase() === 'edit'"><span ng-show="showsuggestedContent">from Suggested Content or </span>by clicking on the 
                                                 Add Resource button</p><p ng-show="!isCollection && mode.toLowerCase() === 'edit'"><a class="blueColor">You can also Add a resource by Ctrl + Alt + A</a></p>
                                         </div>        
                                     </div>

@@ -7,6 +7,7 @@ formApp.directive('topicSelector', function() {
 
     var topicController = ['$scope', '$rootScope', '$controller', '$timeout', function($scope, $rootScope, $controller, $timeout) {
         $scope.contentMeta = $scope.$parent.contentMeta;
+        console.log($scope.contentMeta);
         $scope.topicSelectorMessage = $scope.contentMeta.topic ? '(' + $scope.contentMeta.topic.length + ') topics selected' : '(0) topics selected';
         /**Added for more than one topic selector on same page, element id should be unique as per template **/
         $scope.framework = ($scope.$parent.$parent.tempalteName == "resourceFilterTemplate") ? ecEditor.getContext('resource_framework') : ecEditor.getContext('framework');
