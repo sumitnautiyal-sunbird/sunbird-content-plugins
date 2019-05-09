@@ -35,18 +35,18 @@ _.forEach(metaData.children, (value) => {
             var activeNode = org.ekstep.collectioneditor.api.getService('collection').getActiveNode();
        console.log(activeNode);
        $scope.courseunit.prerequisite = [];
+
+
        if(activeNode.data.metadata.depth === 1){
         _.forEach(prerequi, (value, key) => {
             if(activeNode.data.metadata.index > 1) {
                 if(value.index < activeNode.data.metadata.index) {
-                    pre_requisite.push(value);
-                    activeNode.data.metadata.prerequisite.push(value);
+                    activeNode.data.metadata.prerequisite.push(value.name);
                 }
             }
         });
        }
        console.log(activeNode);
-
             $scope.nodeId = activeNode.data.id;
             if (!_.isUndefined(org.ekstep.collectioneditor.cache.nodesModified[$scope.nodeId])) {
                 $scope.newNode = false;
@@ -79,7 +79,9 @@ _.forEach(metaData.children, (value) => {
         }
     }
     $scope.updateOptions = function(data) {
-        $scope.courseunit.prerequisiteData = data;
+        console.log(data);
+        $scope.courseunit.prerequisite_Data = data;
+        // $scope.courseunit.prerequisiteData = data;
         console.log($scope.courseunit.prerequisiteData);
         }
     $scope.getUpdatedMetadata = function(originalMetadata, currentMetadata){
@@ -138,7 +140,7 @@ _.forEach(metaData.children, (value) => {
             $scope.metadataCloneObj = _.clone($scope.courseunit);
         }
         $scope.courseunit.topicData = '(0) topics selected';
-       $scope.courseunit.prerequisiteData = '(0) topics selected';
+        // $scope.courseunit.prerequisiteData = '(0) options selected';
         $scope.courseunit.name = $scope.courseunit.name || 'Untitled Course Unit'
         if(!_.isEmpty(activeNode.data.metadata) && _.has(activeNode.data.metadata, ["name"])){
            

@@ -528,11 +528,11 @@ angular.module('org.ekstep.metadataform', []).controller('metadataForm', ['$scop
         return map[$scope.tempalteName] || {}
     }
     $scope.changedValue=function(item){
-        console.log(item.name);
+        console.log(item);
         console.log($scope.itemList)
-        console.log($scope.itemList.indexOf(item.name));
-       if($scope.itemList.indexOf(item.name) == -1) {
-        $scope.itemList.push(item.name);
+        console.log($scope.itemList.indexOf(item));
+       if($scope.itemList.indexOf(item) == -1) {
+        $scope.itemList.push(item);
        }
         }
     $scope.isValidInputs = function(object) {

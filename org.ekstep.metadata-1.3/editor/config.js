@@ -614,7 +614,7 @@ window.courseformConfigurations = {
     },
     {
       "code": "activitystart",
-      "dataType": "string",
+      "dataType": "text",
       "description": "choose in number of days activity will start",
       "editable": true,
       "inputType": "number",
@@ -627,7 +627,7 @@ window.courseformConfigurations = {
     },
     {
       "code": "activityend",
-      "dataType": "string",
+      "dataType": "text",
       "description": "choose in number days activity will end",
       "editable": true,
       "inputType": "number",
@@ -640,30 +640,30 @@ window.courseformConfigurations = {
     },
     {
       "code": "prerequisite",
-      "dataType": "string",
-      "description": "Prerequisite of this unit",
+      "dataType": "text",
+      "description": "Choose Prerequisite",
       "editable": true,
-      "inputType": "multiselect",
-      "label": "prerequisite",
-      "name": "Pre-requisite",
-      "placeholder": "Enter Pre-requisite of this unit if there are any",
+      "inputType": "text",
+      "label": "Prerequisites",
+      "name": "Prerequisites",
+      "placeholder": "Choose Prerequisite",
+      "renderingHints": {},
+      "required": false,
+      "visible": true
+    },
+    {
+      "code": "prerequisite_Data",
+      "dataType": "text",
+      "description": "Selected prerequisites",
+      "editable": true,
+      "inputType": "text",
+      "label": "Selected prerequisites",
+      "name": "options",
+      "placeholder": "Selected prerequisites",
       "renderingHints": {},
       "required": false,
       "visible": true
     }
-    // {
-    //   "code": "concepts",
-    //   "dataType": "list",
-    //   "description": "Choose a concept",
-    //   "editable": true,
-    //   "inputType": "conceptselector",
-    //   "label": "Concepts",
-    //   "name": "Concepts",
-    //   "placeholder": "Choose Concepts",
-    //   "renderingHints": {},
-    //   "required": false,
-    //   "visible": true,
-    //   "index": 5
-    // }
+
   ]
 };
