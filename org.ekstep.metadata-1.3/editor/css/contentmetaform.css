@@ -22,7 +22,9 @@ and collection is using 16 grid layout so
 #metadataForm .lef.ui.form .two.wide.field {
     width: 16.66666667%!important;
 }
-
+.ui.form select{
+    width: fit-content !important;
+}
 #meta-modal {
     top: 4% !important;
 }
@@ -31,6 +33,9 @@ and collection is using 16 grid layout so
     top: 1rem;
     right: 1rem;
     color: #000;
+}
+.card-data{
+    width:50%;
 }
 
 .ngdialog.ngdialog-theme-default .ngdialog-content {

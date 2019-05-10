@@ -639,19 +639,6 @@ window.courseformConfigurations = {
       "visible": true
     },
     {
-      "code": "prerequisite",
-      "dataType": "text",
-      "description": "Choose Prerequisite",
-      "editable": true,
-      "inputType": "text",
-      "label": "Prerequisites",
-      "name": "Prerequisites",
-      "placeholder": "Choose Prerequisite",
-      "renderingHints": {},
-      "required": false,
-      "visible": true
-    },
-    {
       "code": "prerequisite_Data",
       "dataType": "text",
       "description": "Selected prerequisites",
@@ -660,6 +647,19 @@ window.courseformConfigurations = {
       "label": "Selected prerequisites",
       "name": "options",
       "placeholder": "Selected prerequisites",
+      "renderingHints": {},
+      "required": false,
+      "visible": true
+    },
+    {
+      "code": "prerequisite",
+      "dataType": "text",
+      "description": "Choose Prerequisite",
+      "editable": true,
+      "inputType": "text",
+      "label": "Prerequisites",
+      "name": "Prerequisites",
+      "placeholder": "Choose Prerequisite",
       "renderingHints": {},
       "required": false,
       "visible": true

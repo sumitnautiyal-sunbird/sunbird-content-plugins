@@ -71,11 +71,31 @@
                                     ng-click="onConfigChange({target: '#unitMetaTemplate', field:dynamicField,form:metaForm})">
                                 </keywords>
                             </div>
-                            <div id="{{dynamicField.code}} " class="field "
+                            <div id="{{dynamicField.code}} " class="field"
+                            ng-class="{ 'error': (!contentMeta[dynamicField.code] && dynamicField.required) , 'required': dynamicField.required} "
+                            name="{{dynamicField.code}}" ng-if="dynamicField.inputType ==='text' && dynamicField.code === 'prerequisite_Data'">
+                            <div class="ui sub header paraHeading">
+                                <p >{{dynamicField.label | uppercase}}
+                                    ({{contentMeta[dynamicField.code].length || 0}})  </p>
+                            </div>
+                            
+                      <div>
+                        <div  ng-repeat="data in contentMeta['prerequisite_Data']">
+                             
+                            <div class="card-data">
+                                {{data | uppercase}}
+                                <hr>
+                            </div>
+                           
+                        
+                    </div>
+                      </div> 
+                            </div>
+                            <div id="{{dynamicField.code}} " class="field"
                             ng-class="{ 'error': (!contentMeta[dynamicField.code] && dynamicField.required) , 'required': dynamicField.required} "
                             name="{{dynamicField.code}}" ng-if="dynamicField.inputType ==='text' && dynamicField.code === 'prerequisite'">
                             <div class="ui sub header paraHeading">
-                                <p class="padding-top-3px">{{dynamicField.label | uppercase}}
+                                <p >{{dynamicField.label | uppercase}}
                                     ({{contentMeta[dynamicField.code].length || 0}})</p>
                             </div>
                           
@@ -84,21 +104,9 @@
                                 data-ng-options="blisterPackTemplate as blisterPackTemplate for blisterPackTemplate in prerequisiteoptions">
                                 <option value="">Select Prerequisites</option>
                             </select>
-                
                         </div>
 
-                        <div id="{{dynamicField.code}} " class="field "
-                        ng-class="{ 'error': (!contentMeta[dynamicField.code] && dynamicField.required) , 'required': dynamicField.required} "
-                        name="{{dynamicField.code}}" ng-if="dynamicField.inputType ==='text' && dynamicField.code === 'prerequisite_Data'">
-                        <div class="ui sub header paraHeading">
-                            <p class="padding-top-3px">{{dynamicField.label | uppercase}}
-                                ({{contentMeta[dynamicField.code].length || 0}})  </p>
-                        </div>
-                      
-                        <div ng-repeat="data in contentMeta['prerequisite_Data']">
-                            {{data | uppercase}}
-                        </div> 
-                        </div>
+            
 
                         </div>
                     </div>
